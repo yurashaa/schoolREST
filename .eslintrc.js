@@ -11,7 +11,8 @@ module.exports = {
     ecmaVersion: 11,
   },
   rules: {
-    "semi": ["error", "always"],
-    "quotes": ["error", "single"]
+    semi: ['error', 'always'],
+    quotes: ['error', 'single'],
+    indent: ['error', 4],
   },
 };

@@ -1,7 +1,16 @@
 const express = require('express');
+const morgan = require('morgan');
+require('dotenv').config();
+
+require('./database').getInstance().setModels();
+const {PORT} = require('./config');
 
 const app = express();
 
-app.listen(5000, () => {
-    console.log('5000 is working...');
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(morgan('dev'));
+
+app.listen(PORT, () => {
+    console.log(`${PORT} is working...`);
 });
